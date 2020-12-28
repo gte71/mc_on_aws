@@ -1,5 +1,5 @@
 #!/bin/bash
-START=/home/minecraft/world1/start.sh
+START=./start.sh
 ME=`basename "$0"`
 PIDFILE=$ME.pid
 rm -f $PIDFILE
