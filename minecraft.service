@@ -3,7 +3,7 @@ Description = start minecraft supervisor
 After = network.target
 
 [Service]
-ExecStart = /home/minecraft/world1/start_supervisor.sh
+ExecStart = /home/minecraft/mc_on_aws/start_supervisor.sh
 
 [Install]
 WantedBy = multi-user.target
