@@ -1,9 +1,16 @@
-[Unit]
-Description = start minecraft supervisor
-After = network.target
+Unit]
+Description = minecraft service
 
 [Service]
-ExecStart = /home/minecraft/mc_on_aws/start_supervisor.sh
+Type = simple
+WorkingDirectory = /opt/minecraft/server/
+ExecStart = /usr/bin/java -Xmx7168M -Xms3072M -jar /opt/minecraft/server/server.jar nogui
+User = ec2-user
+Restart = on-failure
+Sockets = minecraft.socket
+StandardInput = socket
+StandardOutput = journal
+StandardError = journal
 
 [Install]
 WantedBy = multi-user.target
